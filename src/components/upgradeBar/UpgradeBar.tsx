@@ -3,6 +3,10 @@ import s from './upgradeBar.module.css'
 import {useSelector} from "react-redux";
 import {RootState} from "../../store/store";
 import {IncrementMaxEnergy, IncrementRecoveryLVL, IncrementTapLVL} from "../../store/LvlSystem";
+import StockButton from "../universalComponents/stockButton";
+import PanToolAltIcon from '@mui/icons-material/PanToolAlt';
+import BatterySaverIcon from '@mui/icons-material/BatterySaver';
+import BatteryCharging60Icon from '@mui/icons-material/BatteryCharging60';
 
 type UpgradeBarProps = {
     upgradeClickLVL: () => void;
@@ -26,19 +30,34 @@ const UpgradeBar = (props: UpgradeBarProps) => {
     return (
         <div className={s.upgradeBar}>
             <h3 className={s.upgradeBarTitle}>Boosters</h3>
+
             <div className={s.buttonContainer}>
-                <button onClick={props.upgradeClickLVL}>
-                   <div> Multitap</div>
-                    <div>{costReturnHandler(IncrementTapLVL, currentTapLVL)} | LVL : {currentTapLVL} </div>
-                </button>
-                <button onClick={props.upgradeMaxEnergyLevel}>
-                   <div>Max Energy</div>
-                    <div>{costReturnHandler(IncrementMaxEnergy, currentMaxEnergyLVL)} | LVL : {currentMaxEnergyLVL}</div>
-                </button>
-                <button onClick={props.upgradeRecoveryLevel}>
-                   <div>Recovery speed</div>
-                    <div> {costReturnHandler(IncrementRecoveryLVL, currentRecoveryLVL)} | LVL : {currentRecoveryLVL}</div>
-                </button>
+                <StockButton
+                    startIcon={<PanToolAltIcon />}
+                    title='Multitap'
+                    variant='contained'
+                    size='medium'
+                    onClick={props.upgradeClickLVL}
+                    subscribe={`${costReturnHandler(IncrementTapLVL, currentTapLVL)} | LVL : ${currentTapLVL}`}
+                     />
+
+                <StockButton
+                    startIcon={<BatterySaverIcon/>}
+                    title={'Max Energy'}
+                    variant={'contained'}
+                    size={'medium'}
+                    onClick={props.upgradeMaxEnergyLevel}
+                    subscribe={`${costReturnHandler(IncrementMaxEnergy, currentMaxEnergyLVL)} | LVL : ${currentMaxEnergyLVL}`}
+                />
+                <StockButton
+                    startIcon={<BatteryCharging60Icon/>}
+                    title={'Recovery speed'}
+                    variant={'contained'}
+                    size={'medium'}
+                    onClick={props.upgradeRecoveryLevel}
+                    subscribe={`${costReturnHandler(IncrementRecoveryLVL, currentRecoveryLVL)} | LVL : ${currentRecoveryLVL}`}
+                />
+
             </div>
         </div>
     );
