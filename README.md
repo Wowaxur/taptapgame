@@ -1,46 +1,69 @@
-# Getting Started with Create React App
+# Coin Clicker Game
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a simple coin clicker game built with React and Redux. The objective of the game is to click on the coin to earn points and upgrade various attributes to improve your score.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Coin Click**: Click on the coin to earn points.
+- **Energy Management**: Each click consumes energy. Energy recovers over time.
+- **Upgrades**: Improve your click power, energy recovery rate, and maximum energy capacity.
 
-### `npm start`
+## Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. Clone the repository:
+    ```bash
+    git clone <repository-url>
+    cd <repository-directory>
+    ```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+2. Install dependencies:
+    ```bash
+    npm install
+    ```
 
-### `npm test`
+3. Start the development server:
+    ```bash
+    npm start
+    ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Components
 
-### `npm run build`
+- **App**: Main component that integrates all other components.
+- **Coin**: Displays the coin and handles click events.
+- **EnergyBar**: Shows the current and maximum energy levels.
+- **ScoreBar**: Displays the current score.
+- **UpgradeBar**: Provides options to upgrade tap level, recovery level, and maximum energy level.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## State Management
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The application state is managed using Redux. The main actions and reducers are defined in the `store` directory.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Actions
 
-### `npm run eject`
+- `incrementScore`: Increases the score based on the current tap level.
+- `decrementEnergy`: Decreases the energy based on the current tap level.
+- `recoverEnergy`: Recovers energy over time.
+- `upgradeTapLevel`: Upgrades the tap level to increase points per click.
+- `upgradeRecoveryLevel`: Upgrades the recovery level to increase energy recovery rate.
+- `upgradeMaxEnergyLevel`: Upgrades the maximum energy level.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Reducers
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The main reducer handles the state transitions based on the actions dispatched.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Usage
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+1. Click on the coin to earn points. Each click consumes energy.
+2. Monitor your energy levels using the energy bar.
+3. Use the upgrade bar to improve your click power, energy recovery rate, and maximum energy capacity.
+4. Points and upgrades are saved in local storage to persist between sessions.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Contact
+
+For any questions or feedback, please contact [Your Name] at [Your Email].
+
+---
+
+Enjoy playing the Coin Clicker Game!
