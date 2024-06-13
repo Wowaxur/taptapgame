@@ -32,7 +32,17 @@ const setStorage = (state: State) => {
 };
 const loadStorage = (): State => {
     const storageState = localStorage.getItem('initialState');
-    return storageState ? JSON.parse(storageState) : initialState;
+    const lastRecoveryTime = localStorage.getItem('lastRecoveryTime');
+    const state = storageState ? JSON.parse(storageState) : initialState;
+
+    if (lastRecoveryTime) {
+        const now = Date.now();
+        const elapsedTime = now - parseInt(lastRecoveryTime, 10);
+        const recoveryAmount = Math.floor(elapsedTime / 5000) * RecoverySpeed[state.recoveryLVL];
+        state.currentEnergy = Math.min(state.currentEnergy + recoveryAmount, state.currentMaxEnergy);
+    }
+
+    return state;
 };
 
 const INCREMENT_SCORE = 'INCREMENT_SCORE';
@@ -78,11 +88,13 @@ const scoreReducer: Reducer<State, ActionType> = (state = loadStorage(), action)
             return newState;
         }
         case RECOVER_ENERGY: {
+            const now = Date.now();
             const newState = {
                 ...state,
                 currentEnergy: Math.min(state.currentEnergy + RecoverySpeed[state.recoveryLVL], state.currentMaxEnergy),
             };
             setStorage(newState);
+            localStorage.setItem('lastRecoveryTime', now.toString());
             return newState;
         }
         case UPGRADE_TAP_LEVEL: {

@@ -25,7 +25,7 @@ function App() {
     useEffect(() => {
         const interval = setInterval(() => {
             dispatch(recoverEnergy());
-        }, 10000);
+        }, 5000);
         return () => clearInterval(interval);
     }, [dispatch]);
 
