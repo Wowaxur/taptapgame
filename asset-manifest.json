@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/taptapgame/static/css/main.6718a1f6.css",
+    "main.js": "/taptapgame/static/js/main.191ba56b.js",
+    "static/media/coin.png": "/taptapgame/static/media/coin.243d951efa5bb90006bf.png",
+    "index.html": "/taptapgame/index.html",
+    "main.6718a1f6.css.map": "/taptapgame/static/css/main.6718a1f6.css.map",
+    "main.191ba56b.js.map": "/taptapgame/static/js/main.191ba56b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6718a1f6.css",
+    "static/js/main.191ba56b.js"
+  ]
+}
