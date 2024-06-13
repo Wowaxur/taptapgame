@@ -17,7 +17,7 @@ import UpgradeBar from "./components/upgradeBar/UpgradeBar";
 import {TapValue} from "./store/LvlSystem";
 
 function App() {
-    const { score, currentEnergy, currentMaxEnergy } = useSelector((state: RootState) => state);
+    const {score, currentEnergy, currentMaxEnergy} = useSelector((state: RootState) => state);
     const dispatch = useDispatch();
     const tapLVL = useSelector((state: RootState) => state.tapLVL);
     const tapValue = TapValue[tapLVL];
@@ -46,7 +46,6 @@ function App() {
             console.log("Not enough energy to click the coin.");
         }
     };
-
 
     const upgradeClickLVL = () => {
         dispatch(upgradeTapLevel());
