@@ -1,0 +1,29 @@
+/* stockButton.module.css */
+
+.stockButton {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.titleContainer {
+    display: flex;
+    align-items: center;
+}
+
+.title {
+    margin-left: 8px; /* Space between icon and title */
+    font-weight: bold;
+}
+
+.subscribe {
+    margin-top: 4px;
+    font-size: 0.875rem;
+    color: #f1d8d3;
+}
