@@ -1,7 +1,7 @@
 # Coin Clicker Game
 
 This is a simple coin clicker game built with React and Redux. The objective of the game is to click on the coin to earn points and upgrade various attributes to improve your score.
- You can test game by this <a href ={"https://wowaxur.github.io/taptapgame/"}>LINK</a>
+ You can test game by this link : https://wowaxur.github.io/taptapgame/
 ## Features
 
 - **Coin Click**: Click on the coin to earn points.
