@@ -2,6 +2,9 @@
   text-align: center;
   width: auto;
   height: 100vh;
+  background-color: #5492c8; /* Светло-голубой цвет */
+  min-height: 100vh; /* Обеспечивает, что фон будет на всю высоту экрана */
+
 }
 
 .App-logo {
