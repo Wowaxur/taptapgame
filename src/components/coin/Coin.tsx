@@ -15,34 +15,39 @@ const Coin = (props: CoinType) => {
     useEffect(() => {
         const coin = coinRef.current;
         if (coin) {
-            const handleClick = (event: MouseEvent) => {
-                // Check if currentEnergy is greater than or equal to tapValue
-                if (props.currentEnergy >= props.tapValue) {
-                    const number = document.createElement('div');
-                    number.textContent = `+ ${props.tapValue}`;
-                    number.className = s.number;
-                    // Adjust the position slightly up and to the left
-                    const offsetX = -20; // Adjust this value as needed
-                    const offsetY = -20; // Adjust this value as needed
-                    number.style.left = `${event.clientX - coin.offsetLeft + offsetX}px`;
-                    number.style.top = `${event.clientY - coin.offsetTop + offsetY}px`;
+            const handleTouchStart = (event: TouchEvent) => {
+                // Loop through all touches
+                for (let i = 0; i < event.touches.length; i++) {
+                    const touch = event.touches[i];
 
-                    coin.appendChild(number);
+                    // Check if currentEnergy is greater than or equal to tapValue
+                    if (props.currentEnergy >= props.tapValue) {
+                        const number = document.createElement('div');
+                        number.textContent = `+ ${props.tapValue}`;
+                        number.className = s.number;
+                        // Adjust the position slightly up and to the left
+                        const offsetX = -20; // Adjust this value as needed
+                        const offsetY = -20; // Adjust this value as needed
+                        number.style.left = `${touch.clientX - coin.offsetLeft + offsetX}px`;
+                        number.style.top = `${touch.clientY - coin.offsetTop + offsetY}px`;
 
-                    number.style.display = 'block';
+                        coin.appendChild(number);
 
-                    setTimeout(() => {
-                        number.style.display = 'none';
-                        coin.removeChild(number);
-                    }, 500);
+                        number.style.display = 'block';
+
+                        setTimeout(() => {
+                            number.style.display = 'none';
+                            coin.removeChild(number);
+                        }, 500);
+                    }
                 }
             };
 
-            coin.addEventListener('click', handleClick);
+            coin.addEventListener('touchstart', handleTouchStart);
 
             // Cleanup function to remove the event listener when the component unmounts
             return () => {
-                coin.removeEventListener('click', handleClick);
+                coin.removeEventListener('touchstart', handleTouchStart);
             };
         }
     }, [props.currentEnergy, props.tapValue]);
