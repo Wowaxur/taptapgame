@@ -71,6 +71,9 @@
     margin: 0 auto;
     font-size: 36px;
     color: #090707;
+    transition: opacity 0.5s ease-out;
+
+
 }
 /*.coin::before {*/
 /*    content: '';*/
