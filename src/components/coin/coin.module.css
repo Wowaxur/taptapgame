@@ -1,0 +1,85 @@
+.coin {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    position: relative;
+    perspective: 1000px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.coinImage {
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+
+}
+.coinInner {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.coin:active {
+    transform: scale(0.9);
+    transition: transform 0.1s;
+}
+
+.coinFront, .coinBack {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 20px;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.coinFront {
+    background-image: url('../../assets/images/coin.png'); /* Замените путь на ваш путь к изображению */
+    /*background: radial-gradient(circle at 30% 30%, #ffd700, #d4af37);*/
+    object-fit: cover;
+
+}
+
+.coinBack {
+    background: radial-gradient(circle at 30% 30%, #c0c0c0, #808080);
+    transform: rotateY(180deg);
+}
+
+.coinEdge {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    height: 10px; /* Thickness of the edge */
+    background: linear-gradient(to bottom, #d4af37, #c0c0c0); /* Color of the edge */
+    transform: translate(-50%, -50%) rotateX(90deg);
+    border-radius: 50%;
+}
+
+.number {
+    position: absolute;
+    margin: 0 auto;
+    font-size: 36px;
+    color: #090707;
+}
+/*.coin::before {*/
+/*    content: '';*/
+/*    position: absolute;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    width: 100%;*/
+/*    height: 100%;*/
+/*    border-radius: 50%;*/
+/*    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5), 0 4px 8px rgba(0, 0, 0, 0.3);*/
+/*    pointer-events: none;*/
+/*}*/
