@@ -1,0 +1,35 @@
+.energyBarContainer {
+    position: relative;
+    display: flex;
+    width: 50%;
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.filledEnergy {
+    background-color: #5fe22b;
+    height: 100%;
+    transition: width 0.3s ease;
+}
+
+.remainingEnergy {
+    background-color: #000000;
+    height: 100%;
+    transition: width 0.3s ease;
+}
+
+.energyText {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    z-index: 1;
+}
