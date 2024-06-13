@@ -21,12 +21,21 @@ function App() {
     const dispatch = useDispatch();
     const tapLVL = useSelector((state: RootState) => state.tapLVL);
     const tapValue = TapValue[tapLVL];
-
     useEffect(() => {
-        const interval = setInterval(() => {
-            dispatch(recoverEnergy());
-        }, 5000);
-        return () => clearInterval(interval);
+        const worker = new Worker(`${process.env.PUBLIC_URL}/energyWorker.js`);
+
+        worker.postMessage('start');
+
+        worker.onmessage = function (event) {
+            if (event.data === 'recoverEnergy') {
+                dispatch(recoverEnergy());
+            }
+        };
+
+        return () => {
+            worker.postMessage('stop');
+            worker.terminate();
+        };
     }, [dispatch]);
 
     const coinClick = () => {
