@@ -1,0 +1,37 @@
+.upgradeBar {
+display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    width: max-content;
+    margin: 0 auto;
+    padding: 01rem 1rem;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid grey;
+    border-radius: 34px;
+}
+.upgradeBarTitle {
+    padding-top: 0;
+    margin-top: 0;
+}
+.buttonContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.buttonContainer button {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    min-height: 50px;
+    min-width: 120px;
+    display: flex;
+    flex-direction: column; /* Ensure text is displayed in a column */
+    padding: 10px; /* Add some padding for better spacing */
+}
+
+.buttonContainer button div {
+    width: 100%; /* Ensure divs take full width of the button */
+    text-align: left;
+}
