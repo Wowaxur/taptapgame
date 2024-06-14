@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/taptapgame/static/css/main.4c227cb6.css",
-    "main.js": "/taptapgame/static/js/main.15613228.js",
+    "main.css": "/taptapgame/static/css/main.bb46acca.css",
+    "main.js": "/taptapgame/static/js/main.a61af958.js",
     "static/media/coin.png": "/taptapgame/static/media/coin.243d951efa5bb90006bf.png",
     "index.html": "/taptapgame/index.html",
-    "main.4c227cb6.css.map": "/taptapgame/static/css/main.4c227cb6.css.map",
-    "main.15613228.js.map": "/taptapgame/static/js/main.15613228.js.map"
+    "main.bb46acca.css.map": "/taptapgame/static/css/main.bb46acca.css.map",
+    "main.a61af958.js.map": "/taptapgame/static/js/main.a61af958.js.map"
   },
   "entrypoints": [
-    "static/css/main.4c227cb6.css",
-    "static/js/main.15613228.js"
+    "static/css/main.bb46acca.css",
+    "static/js/main.a61af958.js"
   ]
 }
