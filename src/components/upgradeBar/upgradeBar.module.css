@@ -11,22 +11,26 @@
     border-radius: 34px;
     flex-wrap: wrap;
 }
+
 .upgradeBarTitle {
     font-size: 26px;
     color: #00ffd2;
     padding-top: 0;
     margin-top: 0;
 }
+
 .buttonContainer {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
 }
+
 @media only screen and (max-width: 600px) {
-    .upgradeBar{
+    .upgradeBar {
         max-width: 50%;
     }
-.buttonContainer {
-    flex-direction: column;
-}
+
+    .buttonContainer {
+        flex-direction: column;
+    }
 }
