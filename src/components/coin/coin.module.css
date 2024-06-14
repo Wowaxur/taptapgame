@@ -17,7 +17,7 @@
     top: 0;
     left: 0;
     pointer-events: none; /* Ensure the image does not block clicks */
-    transform: scale(1.01);
+    transform: scale(1.05);
 }
 
 .coin:active {
