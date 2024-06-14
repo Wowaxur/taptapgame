@@ -82,7 +82,6 @@ const Coin = (props: CoinType) => {
     return (
         <div className={s.coin} ref={coinRef} onClick={handleFlip}>
             <img className={s.coinImage} src={coinImage} alt={'CoinImage'}/>
-            <div className={s.coinEdge}></div>
         </div>
     );
 };
