@@ -3,13 +3,14 @@
 .stockButton {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+
 }
 
 .content {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    text-align: left;
+
 }
 
 .titleContainer {
@@ -23,6 +24,7 @@
 }
 
 .subscribe {
+    margin-left: 5px;
     margin-top: 4px;
     font-size: 0.875rem;
     color: #f1d8d3;
