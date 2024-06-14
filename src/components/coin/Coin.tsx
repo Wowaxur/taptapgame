@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, {useEffect, useRef} from 'react';
 import coinImage from '../../assets/images/coin.png';
 import s from './coin.module.css';
 
@@ -22,12 +22,23 @@ const Coin = (props: CoinType) => {
 
                 const offsetX = -20;
                 const offsetY = -20;
-                number.style.left = `${clientX - coin.offsetLeft + offsetX}px`;
-                number.style.top = `${clientY - coin.offsetTop + offsetY}px`;
+
+                // Calculate position and constrain within the coin container
+                let left = clientX - coin.offsetLeft + offsetX;
+                let top = clientY - coin.offsetTop + offsetY;
+
+                // Ensure the number does not go beyond the left and top boundaries
+                left = Math.max(0, left);
+                top = Math.max(0, top);
+
+                // Ensure the number does not go beyond the right and bottom boundaries
+                left = Math.min(coin.clientWidth - number.clientWidth, left);
+                top = Math.min(coin.clientHeight - number.clientHeight, top);
+
+                number.style.left = `${left}px`;
+                number.style.top = `${top}px`;
 
                 coin.appendChild(number);
-
-                console.log('Number element created and appended:', number);
 
                 number.style.display = 'block';
 
@@ -36,7 +47,6 @@ const Coin = (props: CoinType) => {
                     setTimeout(() => {
                         if (coin) {
                             coin.removeChild(number);
-                            console.log('Number element removed:', number);
                         }
                     }, 500); // Wait for the fade-out transition
                 }, 500);
@@ -71,12 +81,8 @@ const Coin = (props: CoinType) => {
 
     return (
         <div className={s.coin} ref={coinRef} onClick={handleFlip}>
-            <div className={s.coinInner}>
-                <div className={s.coinFront}>
-                    <img className={s.coinImage} src={coinImage} alt={'CoinImage'} />
-                </div>
-                <div className={s.coinEdge}></div>
-            </div>
+            <img className={s.coinImage} src={coinImage} alt={'CoinImage'}/>
+            <div className={s.coinEdge}></div>
         </div>
     );
 };
