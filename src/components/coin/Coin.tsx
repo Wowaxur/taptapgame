@@ -9,6 +9,7 @@ type CoinType = {
 };
 
 const Coin = (props: CoinType) => {
+    console.log("coin is rendered")
     const coinRef = useRef<HTMLDivElement | null>(null);
 
     useEffect(() => {

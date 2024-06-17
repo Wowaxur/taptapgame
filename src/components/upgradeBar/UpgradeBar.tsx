@@ -15,6 +15,7 @@ type UpgradeBarProps = {
 }
 
 const UpgradeBar = (props: UpgradeBarProps) => {
+    console.log('Upgrade bar is rendered')
     const currentTapLVL = useSelector((state: RootState) => state.tapLVL);
     const currentRecoveryLVL = useSelector((state: RootState) => state.recoveryLVL);
     const currentMaxEnergyLVL = useSelector((state: RootState) => state.maxEnergyLVL);

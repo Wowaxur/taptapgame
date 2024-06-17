@@ -1,7 +1,7 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import Coin from "./components/coin/Coin";
-import {useDispatch, useSelector} from "react-redux";
+import {shallowEqual, useDispatch, useSelector} from "react-redux";
 import {
     decrementEnergy,
     incrementScore,
@@ -14,13 +14,14 @@ import {
 import EnergyBar from "./components/energyBar/energyBar";
 import ScoreBar from "./components/scoreBar/ScoreBar";
 import UpgradeBar from "./components/upgradeBar/UpgradeBar";
-import {TapValue} from "./store/LvlSystem";
+import { TapValue } from "./store/LvlSystem";
 
 function App() {
-    const {score, currentEnergy, currentMaxEnergy} = useSelector((state: RootState) => state);
+    const { score, currentEnergy, currentMaxEnergy } = useSelector((state: RootState) => state, shallowEqual);
     const dispatch = useDispatch();
     const tapLVL = useSelector((state: RootState) => state.tapLVL);
     const tapValue = TapValue[tapLVL];
+
     useEffect(() => {
         const worker = new Worker(`${process.env.PUBLIC_URL}/energyWorker.js`);
 

@@ -7,6 +7,7 @@ type EnergyBarType = {
 }
 
 const EnergyBar = (props: EnergyBarType) => {
+    console.log('Energy bar is rendered ')
     const { maxEnergy, currentEnergy } = props;
 
     // Handle edge cases where maxEnergy might be zero

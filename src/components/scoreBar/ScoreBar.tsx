@@ -5,6 +5,7 @@ type ScoreBarType = {
     score : number
 }
 const ScoreBar = (props : ScoreBarType) => {
+    console.log('Score bar is rendered')
 
     return (
         <div className={s.scoreBar}>
